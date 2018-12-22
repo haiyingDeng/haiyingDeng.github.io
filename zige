@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html style="height: 100%"><head>
+       <meta charset="utf-8">
+   </head>
+   <body style="height: 100%; margin: 0">
+       <div id="container" style="height: 100%; -moz-user-select: none; position: relative;" _echarts_instance_="ec_1545454674824"><div style="position: relative; overflow: hidden; width: 1600px; height: 764px; padding: 0px; margin: 0px; border-width: 0px; cursor: default;"><canvas style="position: absolute; left: 0px; top: 0px; width: 1600px; height: 764px; -moz-user-select: none; padding: 0px; margin: 0px; border-width: 0px;" data-zr-dom-id="zr_0" width="1600" height="764"></canvas></div><div style="position: absolute; display: none; border-style: solid; white-space: nowrap; z-index: 9999999; transition: left 0.4s cubic-bezier(0.23, 1, 0.32, 1) 0s, top 0.4s cubic-bezier(0.23, 1, 0.32, 1) 0s; background-color: rgba(50, 50, 50, 0.7); border-width: 0px; border-color: rgb(51, 51, 51); border-radius: 4px; color: rgb(255, 255, 255); font: 14px/21px Microsoft YaHei; padding: 5px; left: 696px; top: 391px; pointer-events: none;">无报名要求 : 672 </div></div>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/echarts.min.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts-gl/echarts-gl.min.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts-stat/ecStat.min.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/extension/dataTool.min.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/map/js/china.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/map/js/world.js"></script>
+       <script type="text/javascript" src="https://api.map.baidu.com/api?v=2.0&amp;ak=ZUONbpqGBsYGXNIYHicvbAbM"></script><script type="text/javascript" src="https://api.map.baidu.com/getscript?v=2.0&amp;ak=ZUONbpqGBsYGXNIYHicvbAbM&amp;services=&amp;t=20181212102408"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/extension/bmap.min.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/simplex.js"></script>
+       <script type="text/javascript">
+var dom = document.getElementById("container");
+var myChart = echarts.init(dom);
+var app = {};
+option = null;
+var data = [{
+    name: '有报名要求',
+    itemStyle: {
+        color: '#da1d23'
+    },
+    children:[{
+        name: '无健康/经历要求',
+        value:941,
+        itemStyle: {
+            color: '#f2684b'
+            }
+    },{
+        name: '健康',
+        itemStyle: {
+            color: '#dd4c51'
+        },
+        children: [{
+            name:'无',
+            value:34,
+            itemStyle:{
+                color:'#f37674'
+            }
+        },{
+            name:'只时效',
+            value:50,
+            itemStyle:{
+                color:'#e75b68'
+            }
+        },{
+            name:'只资质',
+            value:13,
+            itemStyle:{
+                color:'#d0565f'
+            }
+        },{
+            name:'资质和时效',
+            value:8,
+            itemStyle:{
+                color:'#d45a55'
+            }
+        }]
+    }, {
+        name: '经历',
+        itemStyle: {
+            color: '#c94a44'
+        },
+        children: [{
+            name: '有相关要求',
+            value: 51,
+            itemStyle: {
+                color: '#a5446f'
+            }
+        },{
+            name: '无任何要求',
+            value: 24,
+            itemStyle: {
+                color: '#b53b54'
+            }
+        }]
+    },{
+        name: '经历和健康',
+        itemStyle: {
+            color: '#ebb40f'
+        },
+        children: [{
+            name: '有其一即可',
+            value: 61,
+            itemStyle: {
+                color: '#f7a128'
+            }
+        },{
+            name: '同时具有',
+            value: 14,
+            itemStyle: {
+                color: '#e1c315'
+            }
+        }]
+    }]
+},{
+    name: '无报名要求',
+    value:672,
+    itemStyle: {
+        color: '#c94930'
+    },
+}, ];
+
+option = {
+    title: {
+        text: '马拉松赛事报名资格要求',
+        textStyle: {
+            fontSize: 20,
+            align: 'center'
+        },
+        subtext: '数据来源：爱燃烧网站赛事信息',
+    },
+    tooltip : {
+        trigger: 'item',
+        formatter: "{b} : {c} "
+    },
+    series: {
+        type: 'sunburst',
+        highlightPolicy: 'ancestor',
+        data: data,
+        radius: [0, '95%'],
+        sort: null,
+        levels: [{}, {
+            r0: '10%',
+            r: '40%',
+            itemStyle: {
+                borderWidth: 2
+            },
+            label: {
+                rotate: 'tangential'
+            }
+        }, {
+            r0: '40%',
+            r: '70%',
+            label: {
+                align: 'left'
+            }
+        }, {
+            r0: '70%',
+            r: '92%',
+            label: {
+                position: 'inside',
+                padding: 3,
+                silent: false
+            },
+            itemStyle: {
+                borderWidth: 3
+            }
+        }]
+    }
+};
+;
+if (option && typeof option === "object") {
+    myChart.setOption(option, true);
+}
+       </script>
+   
+</body></html>
